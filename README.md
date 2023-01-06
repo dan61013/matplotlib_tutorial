@@ -2,7 +2,7 @@
 
 ## 參考資源
 1. [使用Python進行資料分析](https://ithelp.ithome.com.tw/articles/10196239)
-
+2. csv file from [Top 50 Video Games](https://www.kaggle.com/datasets/devrimtuner/top-100-video-games?resource=download)
 ---
 
 ## Main Package
