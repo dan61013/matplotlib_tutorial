@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-def sample01():
+def sample_get_series_value():
     """
     按照Coulmn的資料，做Boolean判斷，\n
     並篩選出對應的row數據
@@ -42,7 +42,7 @@ def sample01():
     mask5 = df["Rank"].between(10, 20)
     print(df[mask5])
 
-def sample02():
+def sample_set_index():
     """
     設定index欄位
     """
@@ -65,16 +65,54 @@ def sample02():
     df.reset_index(inplace=True)
     print(df.head(2))
 
-def sample3():
+def sample_loc():
     
+    # 用index取出資料(by loc)
     df = pd.read_csv("./file/Coffee_domestic_consumption.csv", index_col="Country")
+    print(df.loc["Brazil"])
+    print(df.loc[["Brazil", "Malawi"]])  # 一次取出多筆資料
     
+    # iloc是用index位置來取出資料
+    df = pd.read_csv("./file/Coffee_domestic_consumption.csv")
+    print(df.iloc[15])
+    # 一次提出多筆資料
+    print(df.iloc[0:2])  # 取出0~2
+    print(df.iloc[[0, 4]])  # 取出0 & 4
+    
+    # loc & iloc 進階使用
+    df = pd.read_csv("./file/Coffee_domestic_consumption.csv", index_col="Country")
+    print(df.loc["Burundi", "Coffee type"])  # 取出Burundi的Coffee type
+
+def sample_rename():
+    
+    # Change column name
+    df = pd.read_csv("./file/Coffee_domestic_consumption.csv", index_col="Country")
+    df.rename(columns={"Coffee type":"Type", "1990/91":"test001"}, inplace=True)
+    print(df.head(2))
+    
+    # Change index name
+    df.rename(index={"Angola":"New Taipei City", "Bolivia (Plurinational State of)":"None"}, inplace=True)
+    print(df.head(2))
+
+def sample_drop():
+    
+    # drop刪除資料
+    df = pd.read_csv("./file/Coffee_domestic_consumption.csv", index_col="Country")
+    print(df.drop(labels=["1990/91", "1991/92"], axis="columns")[0:2])
+    # axis=0(row), 1(column)
+    print(df.drop(labels=["1990/91", "1991/92"], axis=1)[0:2])
 
 def main():
     
-    # sample01()
+    # sample_get_series_value()
     
-    sample02()
+    # sample_set_index()
+    
+    # sample_loc()
+    
+    # sample_rename()
+    
+    sample_drop()
 
 if __name__ == "__main__":
     main()
