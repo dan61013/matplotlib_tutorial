@@ -1,7 +1,6 @@
 import pandas as pd
 
 def sample_series01():
-    
     """
     Series是一個類似Array的物件，可包含Array的資料
     """
@@ -29,7 +28,6 @@ def sample_series01():
     print(registration)
 
 def sample_dataframe01():
-    
     """
     與使用Excel表格類似，是一個2維的數據有index and columns，\n
     可以透過index and columns尋找我們需要的一筆資料

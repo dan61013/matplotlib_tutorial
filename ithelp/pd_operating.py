@@ -27,6 +27,12 @@ def operating02():
     # 刪除NaN的資料
     print(df.dropna()['Sales'])  # NaN資料會直接display
     print(df.fillna(0)['Sales'])  # Nan資料會直接覆蓋成0
+    
+    # sort 資料排序
+    df = df.fillna(0)
+    df = df.sort_values("Title")
+    df = df.sort_values("Title", ascending=False)  # 倒序
+    print(df)
 
 def main():
     
