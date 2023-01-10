@@ -13,7 +13,18 @@ def sample_multi_index():
 
 def sample_get_lv_val():
     
-    df = pd.read_csv("./file/List of best-selling video games.csv")
+    df = pd.read_csv("./file/List of best-selling video games.csv", index_col=["Rank", "Title"])
+    print(type(df.index))
+    print(df.index.names)
+    df.sort_index(inplace=True)
+    print(df.head())
+    
+    # 取得index(0)的資料
+    print(df.index.get_level_values(0))  # 用位置取得資料
+    print(df.index.get_level_values("Title"))  # 也可以用名稱取得資料
+    
+    # Multi Set Names
+    df.index.set_names(["No.", "Names"], inplace=True)
     print(df)
 
 def main():
