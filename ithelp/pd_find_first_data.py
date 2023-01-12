@@ -2,7 +2,7 @@
 # https://ithelp.ithome.com.tw/questions/10211669
 import pandas as pd
 
-def main():
+def myfunc():
     
     a = pd.Series([1,1,0,1,1,1,0,0,0,1,1,1])
     b = pd.Series([0,0,-1,0,0,0,-1,-1,-1,0,0,0])
@@ -19,12 +19,19 @@ def main():
                 break
         # 把第一個重複出現的數值加入list
         lst.append((c.at[i, 'a'], c.at[i, 'b']))
-        i = i + j + 1  # 更改起始點
-    else:
-        # 因為最後一連串的數據不會找到下一個中斷點，所以直接加入最後一筆不重複的數值
-        lst.append((c.at[length, 'a'], c.at[length, 'b']))
+
+        if j == 1:
+            i += 1  # 代表j = 0
+        elif (i + j) == length:
+            break  # 循環結束，跳出迴圈
+        else:
+            i += j  # i+j等於下一個新的起始點
     
     print(lst)
+
+def main():
+
+    myfunc()
 
 if __name__ == "__main__":
     main()

@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import numpy as np
 
 def sample_case01():
     
@@ -51,12 +52,31 @@ def sample_case03():
     deaths = [1.2,1.7,1.8,2.2,2.5,2.7,2.9,3,3.1,3.2,3.5,3.6,4]
     
     lines = plt.plot(years, pops, years, deaths)
+    plt.setp(lines, marker="o")
     plt.grid(True)
     plt.show()
 
+def sample_case04():
+    """
+    matplotlib with numpy
+    """
+    
+    x = np.arange(0, 1.0, 0.01)
+    y1 = np.sin(4*np.pi*x)
+    y2 = np.sin(2*np.pi*x)
+    lines = plt.plot(x, y1, x, y2)
+    plt.setp(lines, linestyle='--')
+    plt.show()    
+
 def main():
     
-    sample_case03()
+    # sample_case01()
+    
+    # sample_case02()
+    
+    # sample_case03()
+    
+    sample_case04()
 
 if __name__ == "__main__":
     main()
