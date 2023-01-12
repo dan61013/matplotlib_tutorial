@@ -44,3 +44,14 @@
    import pandas as pd
    pd.Series([1, 2, 3], index=['a', 'b', 'c'])
    ```
+
+## Matplotlib
+
+### Matplotlib.pyplot.pie()
+**圓餅圖**
+
+* autopct: 設定百分比顯示格式
+  *  %d%%: 整數百分比
+  *  %0.1f: 一位小數
+  *  %0.1f%%: 一位小數百分比
+  *  %0.2f%%: 兩位小數百分比
