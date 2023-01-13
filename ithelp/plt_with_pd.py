@@ -18,17 +18,62 @@ def sample01():
     plt.axis('equal')
     plt.show()
 
-    # bar chart 長條圖
-    # 使用numpy建資料
-    col_count = 3
-    scores01 = (533, 571, 567)
-    scores02 = (421, 323, 476)
-    scores03 = (357, 565, 501)
-    scores04 = (456, 313, 506)
+def sample02():
+    """
+    bar chart 長條圖\n
+    matplotlib.pyplot.bar()
+    """
+    
+    # Scores Data
+    scores_a = (533, 571, 567)
+    scores_b = (421, 323, 476)
+    scores_c = (357, 565, 501)
+    scores_d = (456, 313, 506)
+    labels = ["Math", "Reading", "Science"]
+    
+    x = np.arange(len(labels))  # the label locations
+    bar_width = 0.2  # the width of the bars
+    
+    fig, ax = plt.subplots()
+    
+    # 定義Bar的圖形
+    a = ax.bar(x, scores_a, bar_width, label='K')
+    b = ax.bar(x + 0.2, scores_b, bar_width, label='C')
+    c = ax.bar(x + 0.4, scores_c, bar_width, label='N')
+    d = ax.bar(x + 0.6, scores_d, bar_width, label='F')
+    
+    ax.set_ylabel("Mean score")
+    ax.set_xlabel("Subject")
+    ax.set_title("Test Scores by Country")
+    ax.legend()
+    ax.grid(True)
+    ax.set_xticks(x + .6 / 2, labels)  # 設定底下的文字
+    
+    ax.bar_label(a, padding=0)
+    ax.bar_label(b, padding=0)
+    ax.bar_label(c, padding=0)
+    ax.bar_label(d, padding=0)
+    
+    fig.tight_layout()
+    plt.show()
+
+def sample03():
+    """
+    補充: plt.subplots\n
+    https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html#matplotlib.pyplot.subplots
+    """
+    
+    # Create Data
+    x = np.linspace(0.2 * np.pi, 400)  # 50筆資料，最大值400
+    y = np.sin(x ** 2)
 
 def main():
     
-    sample01()
+    # sample01()
+    
+    # sample02()
+    
+    sample03()
 
 if __name__ == "__main__":
     main()
