@@ -62,3 +62,33 @@
 
 ### 參考資料:
 1. [General Visual Properities](https://docs.bokeh.org/en/latest/docs/user_guide/styling/visuals.html#ug-styling-line-properties)
+
+## Machine Learning
+
+### Intro
+
+* 是實現人工智慧的一個途徑
+* 涉及機率論、統計學、逼近論、凸分析、計算複雜性理論等多門學科
+
+### 機器學習的類型
+* 監督式學習 Supervised Learning
+  * 提供Data以及答案
+  * 讓機器學習分辨
+  * 後續可以透過給新的Data得到答案
+* 非監督式學習 Unsupervised Learning
+  * 提供Data，但沒有答案
+  * 讓機器自己去學習分辨答案
+* 半監督式學習 Semi-Supervised Learning
+  * 提供Data
+  * 在Data中取一定數量，並提供答案
+  * 剩餘的數量由機器自行學習判斷
+* 增強式學習 Reinforcement Learning
+  * 觀察到目前的狀態
+  * 執行動作
+  * 收到報酬與觀察到新的狀態
+  * 重複以上動作N次，直到某個終止時間
+
+### 機器學習的名詞
+
+1. 特徵 Features
+2. 標籤 Labels
