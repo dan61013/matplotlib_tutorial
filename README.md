@@ -55,3 +55,10 @@
   *  %0.1f: 一位小數
   *  %0.1f%%: 一位小數百分比
   *  %0.2f%%: 兩位小數百分比
+
+---
+
+## Bokeh
+
+### 參考資料:
+1. [General Visual Properities](https://docs.bokeh.org/en/latest/docs/user_guide/styling/visuals.html#ug-styling-line-properties)
